@@ -1,0 +1,161 @@
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+  body {
+    line-height: 1; }
+  ol, ul {
+    list-style: none; }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+
+/* #Basic Styles
+================================================== */
+  body {
+    font: 14px/21px "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+ }
+
+
+/* #Typography
+================================================== */
+  h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    font-weight: 300;
+    line-height: 1.2; }
+  .subheader { color: #777; }
+
+  p { margin: 0 0 20px 0; }
+  p img { margin: 0; }
+  p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+  em { font-style: italic; }
+  strong { font-weight: bold; color: #333; }
+  small { font-size: 80%; }
+
+/*  Blockquotes  */
+  blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
+  blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+  blockquote cite { display: block; font-size: 12px; color: #555; }
+  blockquote cite:before { content: "\2014 \0020"; }
+  blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+  hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+/* #Links
+================================================== */
+  a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+  a:hover, a:focus { color: #000; }
+  p a, p a:visited { line-height: inherit; }
+
+
+
+
+
+
+body {
+  padding-top: 150px;
+  background-color: #f5f5f5;
+  background-image: url('../img/top-noise.png'), url('../img/bg.jpg');
+  background-repeat: repeat-x, repeat;
+  background-position: 0 0, 0 0;
+}
+.logo {
+  display: block;
+  margin: 0 auto 30px;
+}
+.main-heading {
+  text-align: center;
+  font-size: 32px;
+}
+.attribution {
+  color: #999;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+}
+.attribution a {
+  color: #999;
+  text-decoration: none;
+  -webkit-transition: color .2s ease-in-out;
+     -moz-transition: color .2s ease-in-out;
+          transition: color .2s ease-in-out;
+
+}
+.attribution a:hover {
+  color: #333;
+}
+
+
+@-webkit-keyframes reset {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade-in-and-down {
+  0% {
+      opacity: 0;
+      margin-top: -30px;
+  }
+  100% {
+      opacity: 1;
+      margin-top: 0;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.logo,
+.main-heading,
+.attribution {
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 1;
+}
+
+.logo,
+.main-heading {
+    -webkit-animation-name: reset, fade-in-and-down;
+    -webkit-animation-duration: .5s;
+}
+
+.attribution {
+    -webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: .75s;
+}
+
+.logo {-webkit-animation-delay: 0, 0;}
+.main-heading {-webkit-animation-delay: 0, 0;}
+.attribution {-webkit-animation-delay: 0, .5s;}
+
+
+
+
+
+
+
+
+
+
+
+

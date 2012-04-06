@@ -1,0 +1,25 @@
+/* Fade in
+------------------------------------------------------------*/
+/*@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    margin-top: -20px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo {
+  -webkit-animation: fade-in .5s 0 1 ease-out;
+  -moz-animation: fade-in .5s 0 1 ease-out;
+}*/

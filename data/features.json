@@ -1,9 +1,0 @@
-{
-  "title" : "Features",
-  "features" : [
-    {"issue" : "do this"},
-    {"issue" : "do that"},
-    {"issue" : "do the last thing"}
-  ],
-  "feature" : "do something"
-}
