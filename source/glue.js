@@ -38,14 +38,17 @@ $(function() {
     location.hash = "#" + templateName;
   }
 
+  var view = {
+    title: "Titletown"
+  };
+
   function renderTemplate(templateName, templateContainer) {
     $.ajax({
-      url: templateName + ".html",
+      url: templateName + ".glue",
       cache: false
     }).done(function(html) {
-      templateContainer
-        .empty()
-        .append(html)
+      html = Mustache.render(html, view);
+      templateContainer.html(html)
       var subincludes = templateContainer.find($('[glue-src]'));
       if(subincludes.length != 0) {
         subincludes.each(function() {
