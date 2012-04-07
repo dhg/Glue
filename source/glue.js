@@ -38,15 +38,12 @@ $(function() {
     location.hash = "#" + templateName;
   }
 
-  var view = {
-    title: "Titletown"
-  };
-
   function renderTemplate(templateName, templateContainer) {
     $.ajax({
-      url: templateName + ".glue",
+      url: templateName + ".mustache",
       cache: false
     }).done(function(html) {
+      console.log(html)
       html = Mustache.render(html, view);
       templateContainer.html(html)
       var subincludes = templateContainer.find($('[glue-src]'));

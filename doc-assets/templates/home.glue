@@ -1,7 +1,0 @@
-
-<img class="logo" src="doc-assets/img/logo.png" alt="">
-<h2 class="main-heading">{{title}}</h2>
-{{#title}}
-<div glue-src="doc-assets/templates/test"></div>
-{{/title}}
-<h5 class="attribution">Made with love by <a href="#">@dhg</a>.</h5>
