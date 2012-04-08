@@ -39,7 +39,6 @@ $(function() {
   }
 
   function renderTemplate(templateName, templateContainer) {
-
     $.ajax({
       url: templateName + ".html",
       cache: false

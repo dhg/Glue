@@ -21,8 +21,9 @@
 /* #Basic Styles
 ================================================== */
   body {
-    font: 14px/21px "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #444;
+    font: 16px/22px "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+    font-weight: 300;
  }
 
 
@@ -30,7 +31,6 @@
 ================================================== */
   h1, h2, h3, h4, h5, h6 {
     color: #333;
-    font-weight: 300;
     line-height: 1.2; }
   .subheader { color: #777; }
 
@@ -64,7 +64,7 @@
 
 
 body {
-  padding-top: 150px;
+  padding: 150px 0;
   background-color: #f5f5f5;
   background-image: url('../img/top-noise.png'), url('../img/bg.jpg');
   background-repeat: repeat-x, repeat;
@@ -95,6 +95,63 @@ body {
 .attribution a:hover {
   color: #333;
 }
+
+
+hr {
+  width: 300px;
+  margin: 60px auto;
+  border: none;
+  height: 1px;
+  background-color: transparent; /* Old browsers */
+  background-repeat: repeat-y; /* Rpeat the gradient */
+  background-image: -moz-linear-gradient(left, rgba(220,220,220,0) 0%, #dddddd 25%, #dddddd 75%, rgba(220,220,220,0) 100%,); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(220,220,220,0)), color-stop(25%,#dddddd), color-stop(75%,#dddddd), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(left, rgba(220,220,220,0) 0%,#dddddd 25%, #dddddd 75%, rgba(220,220,220,0) 100%); /* Chrome 10+, Safari 5.1+ */
+  background-image: -ms-linear-gradient(left, rgba(220,220,220,0) 0%, #dddddd 25%, #dddddd 75%, rgba(220,220,220,0) 100%); /* IE10+ */
+  background-image: -o-linear-gradient(left, rgba(220,220,220,0) 0%, #dddddd 25%, #dddddd 75%, rgba(220,220,220,0) 100%); /* Opera 11.10+ */
+  background-image: linear-gradient(left, rgba(220,220,220,0) 0%, #dddddd 25%, #dddddd 75%, rgba(220,220,220,0) 100%); /* W3C */
+}
+.glue-container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+.value-list li:nth-child(even) .value-desc {
+  margin-left: 0;
+  margin-right: 25px;
+}
+
+
+.value-graphic {
+  width: 150px;
+  float: left;
+}
+
+.value-desc {
+  float: left;
+  margin-left: 25px;
+  width: 325px;
+}
+
+.value-list li {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+
+.section-header {
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 40px;
+}
+
+.subsection-header {
+  color: #333;
+  font-weight: 600;
+}
+
+
 
 
 @-webkit-keyframes reset {
@@ -128,7 +185,8 @@ body {
 
 .logo,
 .main-heading,
-.attribution {
+.attribution,
+.main-content {
   -webkit-animation-timing-function: ease-out;
   -webkit-animation-iteration-count: 1;
 }
@@ -144,9 +202,15 @@ body {
     -webkit-animation-duration: .75s;
 }
 
+.main-content {
+    -webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 1.5s, .75s;
+}
+
 .logo {-webkit-animation-delay: 0, 0;}
 .main-heading {-webkit-animation-delay: 0, 0;}
 .attribution {-webkit-animation-delay: 0, .5s;}
+.main-content {-webkit-animation-delay: 0, 1.5s;}
 
 
 
