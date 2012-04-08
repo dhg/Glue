@@ -96,7 +96,7 @@ body {
   color: #333;
 }
 
-
+/*
 @-webkit-keyframes reset {
   0% {
       opacity: 0;
@@ -146,16 +146,4 @@ body {
 
 .logo {-webkit-animation-delay: 0, 0;}
 .main-heading {-webkit-animation-delay: 0, 0;}
-.attribution {-webkit-animation-delay: 0, .5s;}
-
-
-
-
-
-
-
-
-
-
-
-
+.attribution {-webkit-animation-delay: 0, .5s;}*/

@@ -40,14 +40,12 @@ $(function() {
 
   function renderTemplate(templateName, templateContainer) {
     $.ajax({
-      url: templateName + ".mustache",
+      url: templateName + ".html",
       cache: false
     }).done(function(html) {
-      console.log(html)
-      html = Mustache.render(html, view);
       templateContainer.html(html)
       var subincludes = templateContainer.find($('[glue-src]'));
-      if(subincludes.length != 0) {
+      if (subincludes.length != 0) {
         subincludes.each(function() {
           renderTemplate($(this).attr('glue-src'), $(this));
         })

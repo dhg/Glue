@@ -1,6 +1,6 @@
 /* Fade in
-------------------------------------------------------------*/
-/*@-webkit-keyframes fade-in {
+------------------------------------------------------------ */
+@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
     margin-top: -20px;
@@ -19,7 +19,7 @@
   }
 }
 
-.logo {
+.rendered {
   -webkit-animation: fade-in .5s 0 1 ease-out;
   -moz-animation: fade-in .5s 0 1 ease-out;
-}*/
+}
