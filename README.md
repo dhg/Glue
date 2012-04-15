@@ -1,26 +1,18 @@
-<section id="need-to-know" class="need-to-know">
-  <p class="section-header"><strong>Using Glue</strong> is super simple. There are only three things you need to know:</p>
-  <ol class="need-to-know-list">
-    <li>
-      <h5 class="subsection-header">1. Glue-src is for partials</h5>
-      <p>Use the “glue-src” attribute on any element to replace its content with HTML from the template you specifiy when the page loads.</p>
-<pre class="code-snippet">
-&lt;div glue-src=<span class="code-value">&quot;navbar&quot;</span>&gt;</div>
-</pre>
-    </li>
-    <li>
-      <h5 class="subsection-header">2. Glue-link is for links to new pages</h5>
-      <p>Put a “glue-link” attribute on an anchor to clear the existing page and replace it with the new one you specify.</p>
-<pre class="code-snippet">
-&lt;a glue-link=<span class="code-value">”page2”</span>&gt;<span class="code-plain">Go to the next page</span>&lt;/a&gt;
-</pre>
-    </li>
-    <li>
-      <h5 class="subsection-header">3. The .glue-container in your index.html is important</h5>
-      <p>Any content that is going to change from page to page will be loaded into the .glue-container, so leave it in your index.html. Any templates outside of this will persist on every page.</p>
-<pre class="code-snippet">
-&lt;div class=<span class="code-value">&quot;glue-container&quot;</span>&gt;&lt;/div&gt;</span>
-</pre>
-    </li>
-  </ol>
-</section>
+### Using Glue is super simple. There are only three things you need to know:
+<ol >
+<li>
+  ##### Glue-src is for partials
+  Use the “glue-src” attribute on any element to replace its content with HTML from the template you specifiy when the page loads.
+<code>&lt;div glue-src=&quot;navbar&quot;&gt;</code>
+</li>
+<li>
+  ##### Glue-link is for links to new pages
+  Put a “glue-link” attribute on an anchor to clear the existing page and replace it with the new one you specify.
+<code>&lt;a glue-link=”page2”&gt;Go to the next page&lt;/a&gt;</code>
+</li>
+<li>
+  ##### The .glue-container in your index.html is important
+  Any content that is going to change from page to page will be loaded into the .glue-container, so leave it in your index.html. Any templates outside of this will persist on every page.
+<code>&lt;div class=&quot;glue-container&quot;&gt;&lt;/div&gt;</code>
+</li>
+</ol>
