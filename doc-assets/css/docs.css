@@ -72,6 +72,10 @@ body {
   background-repeat: repeat;
   background-position: 0 0;
 }
+.main-content {
+  position: relative;
+  z-index: 10;
+}
 .top-noise {
   position: fixed;
   top: 0;

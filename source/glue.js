@@ -1,34 +1,39 @@
 $(function() {
 
   // Main vars----------------------------------------
-  var includes = $('[glue-src]');
-  var links = $('[glue-link]');
-  var fragment = getFragment();
+  var includes = $('[data-glue-src]');
   var defaultYield = $('.glue-container');
+  var fragment = getFragment();
 
   // URL Routing -------------------------------------
-  if(fragment) {
-    routeToTemplate(fragment);
-  }
+  routeToFragment();
 
   // Back button -------------------------------------
   window.onpopstate = function(event) {
-    routeToTemplate(getFragment());
+    routeToFragment();
   };
 
   // Glue includes -----------------------------------
   includes.each(function() {
-    renderTemplate($(this).attr('glue-src'), $(this));
+    renderTemplate($(this).attr('data-glue-src'), $(this));
   })
 
   // Handle links ------------------------------------
-  $('[glue-link]').live("click", function(e) {
-    e.preventDefault();
-    routeToTemplate($(this).attr('glue-link'));
+  $(document).on("click", "[data-glue-link]", function(e) {
+    e.preventDefault(e);
+    routeToTemplate($(e.target).attr('data-glue-link'));
   });
 
   function getFragment() {
     return location.hash.substr(1);
+  }
+
+  function routeToFragment() {
+    if(getFragment()) {
+      routeToTemplate(getFragment());
+    } else {
+      return false;
+    }
   }
 
   function routeToTemplate(templateName, templateContainer) {
@@ -44,10 +49,10 @@ $(function() {
       cache: false
     }).done(function(html) {
       templateContainer.html(html)
-      var subincludes = templateContainer.find($('[glue-src]'));
+      var subincludes = templateContainer.find($('[data-glue-src]'));
       if (subincludes.length != 0) {
         subincludes.each(function() {
-          renderTemplate($(this).attr('glue-src'), $(this));
+          renderTemplate($(this).attr('data-glue-src'), $(this));
         })
       } else {
         defaultYield.addClass('rendered');
