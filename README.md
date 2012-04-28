@@ -24,12 +24,12 @@
 <li>
   <strong>Glue-link is for links to new pages</strong>
   Put a “data-glue-link” attribute on an anchor to clear the existing page and replace it with the new one you specify.
-<code>&lt;a glue-link=”page2”&gt;Go to the next page&lt;/a&gt;</code>
+<code>&lt;a data-glue-link=”page2”&gt;Go to the next page&lt;/a&gt;</code>
 </li>
 <li>
   <strong>The .glue-container in your index.html is important</strong>
   Any content that is going to change from page to page will be loaded into the .glue-container, so leave it in your index.html. Any templates outside of this will persist on every page.
-<code>&lt;div class=&quot;data-glue-container&quot;&gt;&lt;/div&gt;</code>
+<code>&lt;div class=&quot;glue-container&quot;&gt;&lt;/div&gt;</code>
 </li>
 </ol>
 
