@@ -122,6 +122,8 @@ hr {
   background-image: linear-gradient(left, rgba(220,220,220,0) 0%, #dddddd 25%, #dddddd 75%, rgba(220,220,220,0) 100%); /* W3C */
 }
 .glue-container {
+  position: relative;
+  z-index: 10;
   width: 500px;
   margin: 0 auto;
 }

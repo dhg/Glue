@@ -1,18 +1,18 @@
 <section id="need-to-know" class="need-to-know">
-  <p class="section-header"><strong>Using Glue</strong> is super simple. There are only three things you need to know:</p>
+  <p class="section-header"><strong>Using Glue</strong> is super simple.</p>
   <ol class="need-to-know-list">
     <li>
       <h5 class="subsection-header">1. Glue-src is for partials</h5>
       <p>Use the “glue-src” attribute on any element to replace its content with HTML from the template you specifiy when the page loads.</p>
 <pre class="code-snippet">
-&lt;div glue-src=<span class="code-value">&quot;navbar&quot;</span>&gt;</div>
+&lt;div data-glue-src=<span class="code-value">&quot;navbar&quot;</span>&gt;</div>
 </pre>
     </li>
     <li>
       <h5 class="subsection-header">2. Glue-link is for links to new pages</h5>
       <p>Put a “glue-link” attribute on an anchor to clear the existing page and replace it with the new one you specify.</p>
 <pre class="code-snippet">
-&lt;a glue-link=<span class="code-value">”page2”</span>&gt;<span class="code-plain">Go to the next page</span>&lt;/a&gt;
+&lt;a data-glue-link=<span class="code-value">”page2”</span>&gt;<span class="code-plain">Go to the next page</span>&lt;/a&gt;
 </pre>
     </li>
     <li>

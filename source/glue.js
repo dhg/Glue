@@ -1,8 +1,8 @@
 $(function() {
 
   // Main vars----------------------------------------
-  var includes = $('[glue-src]');
-  var links = $('[glue-link]');
+  var includes = $('[data-glue-src]');
+  var links = $('[data-glue-link]');
   var fragment = getFragment();
   var defaultYield = $('.glue-container');
 
@@ -18,13 +18,13 @@ $(function() {
 
   // Glue includes -----------------------------------
   includes.each(function() {
-    renderTemplate($(this).attr('glue-src'), $(this));
+    renderTemplate($(this).attr('data-glue-src'), $(this));
   })
 
   // Handle links ------------------------------------
-  $('[glue-link]').live("click", function(e) {
+  $('[data-glue-link]').live("click", function(e) {
     e.preventDefault();
-    routeToTemplate($(this).attr('glue-link'));
+    routeToTemplate($(this).attr('data-glue-link'));
   });
 
   function getFragment() {
@@ -44,10 +44,10 @@ $(function() {
       cache: false
     }).done(function(html) {
       templateContainer.html(html)
-      var subincludes = templateContainer.find($('[glue-src]'));
+      var subincludes = templateContainer.find($('[data-glue-src]'));
       if (subincludes.length != 0) {
         subincludes.each(function() {
-          renderTemplate($(this).attr('glue-src'), $(this));
+          renderTemplate($(this).attr('data-glue-src'), $(this));
         })
       } else {
         defaultYield.addClass('rendered');
