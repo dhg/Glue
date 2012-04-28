@@ -1,0 +1,27 @@
+html {
+  overflow-y: scroll;
+}
+
+/* Fade in
+------------------------------------------------------------*/
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rendered {
+  -webkit-animation: fade-in .5s 0 1 ease-out;
+  -moz-animation: fade-in .5s 0 1 ease-out;
+}
