@@ -3,17 +3,18 @@ $(function() {
   // Main vars----------------------------------------
   var includes = $('[data-glue-src]');
   var links = $('[data-glue-link]');
-  var fragment = getFragment();
   var defaultYield = $('.glue-container');
 
   // URL Routing -------------------------------------
-  if(fragment) {
-    routeToTemplate(fragment);
+  if(getFragment()) {
+    routeToTemplate(getFragment());
   }
 
   // Back button -------------------------------------
   window.onpopstate = function(event) {
-    routeToTemplate(getFragment());
+    if(getFragment()) {
+      routeToTemplate(getFragment());
+    }
   };
 
   // Glue includes -----------------------------------
@@ -28,7 +29,11 @@ $(function() {
   });
 
   function getFragment() {
-    return location.hash.substr(1);
+    if(location.hash.substr(1)) {
+      return location.hash.substr(1);
+    } else {
+      return false;
+    }
   }
 
   function routeToTemplate(templateName, templateContainer) {
