@@ -3,17 +3,18 @@ $(function() {
   // Main vars----------------------------------------
   var includes = $('[data-glue-src]');
   var links = $('[data-glue-link]');
+  var fragment = getFragment();
   var defaultYield = $('.glue-container');
 
   // URL Routing -------------------------------------
-  if(getFragment()) {
-    routeToTemplate(getFragment());
+  if(fragment) {
+    routeToTemplate(fragment);
   }
 
   // Back button -------------------------------------
   window.onpopstate = function(event) {
-    if(getFragment()) {
-      routeToTemplate(getFragment());
+    if(fragment) {
+      routeToTemplate(fragment);
     }
   };
 
