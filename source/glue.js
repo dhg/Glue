@@ -13,7 +13,11 @@ $(function() {
 
   // Back button -------------------------------------
   window.onpopstate = function(event) {
-    routeToTemplate(getFragment());
+    if(getFragment()) {
+      routeToTemplate(fragment);
+    } else {
+      routeToTemplate('layout')
+    }
   };
 
   // Glue includes -----------------------------------
@@ -28,17 +32,24 @@ $(function() {
   });
 
   function getFragment() {
-    return location.hash.substr(1);
+    var localFrag = location.hash.substr(1);
+    if(location.hash.substr(1)) {
+      fragment = localFrag;
+      return fragment;
+    } else {
+      fragment = null;
+      return false;
+    }
   }
 
   function routeToTemplate(templateName, templateContainer) {
-    $('.rendered').removeClass('rendered');
     templateContainer = templateContainer || defaultYield;
     renderTemplate(templateName, templateContainer);
     location.hash = "#" + templateName;
   }
 
   function renderTemplate(templateName, templateContainer) {
+    $('.rendered').removeClass('rendered');
     $.ajax({
       url: templateName + ".html",
       cache: false
@@ -50,7 +61,7 @@ $(function() {
           renderTemplate($(this).attr('data-glue-src'), $(this));
         })
       } else {
-        defaultYield.addClass('rendered');
+        templateContainer.addClass('rendered');
       }
     });
   }
