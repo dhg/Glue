@@ -13,8 +13,10 @@ $(function() {
 
   // Back button -------------------------------------
   window.onpopstate = function(event) {
-    if(fragment) {
+    if(getFragment()) {
       routeToTemplate(fragment);
+    } else {
+      routeToTemplate('layout')
     }
   };
 
@@ -30,21 +32,24 @@ $(function() {
   });
 
   function getFragment() {
+    var localFrag = location.hash.substr(1);
     if(location.hash.substr(1)) {
-      return location.hash.substr(1);
+      fragment = localFrag;
+      return fragment;
     } else {
+      fragment = null;
       return false;
     }
   }
 
   function routeToTemplate(templateName, templateContainer) {
-    $('.rendered').removeClass('rendered');
     templateContainer = templateContainer || defaultYield;
     renderTemplate(templateName, templateContainer);
     location.hash = "#" + templateName;
   }
 
   function renderTemplate(templateName, templateContainer) {
+    $('.rendered').removeClass('rendered');
     $.ajax({
       url: templateName + ".html",
       cache: false
@@ -56,8 +61,13 @@ $(function() {
           renderTemplate($(this).attr('data-glue-src'), $(this));
         })
       } else {
-        defaultYield.addClass('rendered');
+        templateContainer.addClass('rendered');
       }
     });
   }
+
+  $('.losers').live("click", function() {
+    renderTemplate('doc-assets/templates/examples', $('#in-the-works'));
+  })
+
 });
