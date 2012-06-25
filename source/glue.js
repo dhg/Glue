@@ -42,13 +42,13 @@ $(function() {
     }
   }
 
-  function routeToTemplate(templateName, templateContainer) {
+  function routeToTemplate(templateName, templateContainer, callback) {
     templateContainer = templateContainer || defaultYield;
-    renderTemplate(templateName, templateContainer);
+    renderTemplate(templateName, templateContainer, callback);
     location.hash = "#" + templateName;
   }
 
-  function renderTemplate(templateName, templateContainer) {
+  function renderTemplate(templateName, templateContainer, callback) {
     $('.rendered').removeClass('rendered');
     $.ajax({
       url: templateName + ".html",
@@ -62,6 +62,7 @@ $(function() {
         })
       } else {
         templateContainer.addClass('rendered');
+        callback;
       }
     });
   }
